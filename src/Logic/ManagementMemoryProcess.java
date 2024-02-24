@@ -15,6 +15,7 @@ public class ManagementMemoryProcess {
      */
     public ManagementMemoryProcess() {
         processList = new ArrayList<>();
+        systemMemoryFixed = new ArrayList<>();
         systemMemoryDynamic = new ArrayList<>();
     }
 
@@ -22,8 +23,12 @@ public class ManagementMemoryProcess {
         return (ArrayList<Process>) processList.clone();
     }
 
-    public ArrayList<Memory> getMemory(){
+    public ArrayList<Memory> getMemoryDynamic(){
         return (ArrayList< Memory >) systemMemoryDynamic.clone();
+    }
+
+    public ArrayList<Memory> getSystemMemoryFixed(){
+        return (ArrayList<Memory >) systemMemoryFixed.clone();
     }
 
     public Process findProcess(String PID){
@@ -70,11 +75,19 @@ public class ManagementMemoryProcess {
      */
     public ArrayList< Memory > actionMemoryFixed(String PID, boolean action){
         int count = 0;
-        for (Memory memory : systemMemoryFixed){
-            if (memory.isEnabled() && action){
+        for (Memory memory : getSystemMemoryFixed()){
+            System.out.println(memory.getSpaceSize()+" "+findProcess(PID).getMemory());
+            if (memory.isEnabled() && action && memory.getSpaceSize() >= findProcess(PID).getMemory()) {
+
                 Process process = findProcess(PID);
-                systemMemoryFixed.set(count, new Memory(memory.getMemoryAddress(), false, process.getMemory(), PID));
-                systemMemoryFixed.add(count, new Memory(generatorMemoryAddress(), false, memory.getSpaceSize()- process.getMemory(), null));
+                systemMemoryFixed.set(count, new Memory(memory.getMemoryAddress(), false, process.getMemory(), process.getPID()));
+                if ((memory.getSpaceSize() - findProcess(PID).getMemory()) != 0) {
+                    systemMemoryFixed.add(count + 1, new Memory(generatorMemoryAddress(), false, memory.getSpaceSize() - process.getMemory(), null));
+                }
+                break;
+            }
+            if (memory.getSpaceSize() < findProcess(PID).getMemory()){
+                System.out.println("No hay espacio suficiente para el proceso");
             }
 
             if (!memory.isEnabled() && !action && memory.getPID().equals(PID)) {

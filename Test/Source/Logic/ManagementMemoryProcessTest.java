@@ -52,6 +52,8 @@ class ManagementMemoryProcessTest {
         managementMemoryProcess.addProcess(process8);
         managementMemoryProcess.addProcess(process9);
         managementMemoryProcess.addProcess(process10);
+
+        managementMemoryProcess.setFixedPartitions(16, 256);
     }
 
 
@@ -99,10 +101,45 @@ class ManagementMemoryProcessTest {
     @Test
     void unifyMemory() {
 
-
     }
 
     @Test
     void actionMemory() {
+    }
+
+
+    @Test
+    void generatorMemoryAddress() {
+        setupTwo();
+
+    }
+
+    @Test
+    void setFixedPartitions() {
+        setup();
+        managementMemoryProcess.setFixedPartitions(20, 256);
+        System.out.println(managementMemoryProcess.getSystemMemoryFixed());
+    }
+
+    @Test
+    void actionMemoryFixed() {
+        setupTwo();
+        System.out.println(managementMemoryProcess.getSystemMemoryFixed().size());
+        managementMemoryProcess.actionMemoryFixed(process1.getPID(), true);
+        managementMemoryProcess.actionMemoryFixed(process2.getPID(), true);
+        managementMemoryProcess.actionMemoryFixed(process3.getPID(), true);
+        System.out.println(managementMemoryProcess.getSystemMemoryFixed().size());
+        for (Memory memory : managementMemoryProcess.getSystemMemoryFixed()){
+            System.out.println(memory);
+        }
+    }
+
+    @Test
+    void testUnifyMemory() {
+    }
+
+    @Test
+    void actionMemoryDynamic() {
+
     }
 }
