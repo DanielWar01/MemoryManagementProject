@@ -1,6 +1,7 @@
 # Proyecto de Simulación de Gestión de Memoria
 
 Este proyecto, desarrollado en Java utilizando el paradigma de programación orientada a objetos con la versión 17 del JDK y la biblioteca Java Swing para la interfaz gráfica, tiene como objetivo simular la localización, ubicación y liberación de n procesos en la memoria del PC utilizando particiones fijas y variables.
+![Lenguaje Java-Libreria Swing](https://ubiqum.com/wp-content/uploads/2021/12/learn-java-with-ubiqum-logo.png)
 
 ## Integrantes del Equipo
 - **Daniel Alejandro Guerra**
