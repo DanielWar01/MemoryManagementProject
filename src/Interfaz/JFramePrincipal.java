@@ -28,7 +28,7 @@ public class JFramePrincipal extends JFrame implements ActionListener{
 	private String activos [];			//Lita de procesos activos
 	private int modelo = 1;				//Modelo seleccionado
 	private int asignacion = 1;			//Algoritmos de asignacion
-	private int tamOcupado = 0;			//label tama�o ocupado
+	private int tamOcupado = 0;			//label tamano ocupado
 	private int tamLibre = 0;
 	private int fragmentacion = 0;
 	private boolean compactacion = false;	//Compactacion activa/no activa
