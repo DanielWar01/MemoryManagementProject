@@ -23,7 +23,6 @@ import java.util.ArrayList;
 
 
 public class JFramePrincipal extends JFrame implements ActionListener{
-    
 	private String mensaje = "";		//manejo de los mensajes a mostrar
 	private String activos [];			//Lita de procesos activos
 	private int modelo = 1;				//Modelo seleccionado
