@@ -121,7 +121,7 @@ public class JFramePrincipal extends JFrame implements ActionListener{
 		tglbtnON_OFF.addActionListener(this);
 		panelProcesos.add(tglbtnON_OFF);
 		
-		lblProcesosDisp = new JLabel("Proc. Disponibles");
+		lblProcesosDisp = new JLabel("Procesos Disponibles");
 		lblProcesosDisp.setFont(new Font("Tahoma", Font.BOLD, 11));
 		lblProcesosDisp.setBounds(10, 55, 142, 13);
 		panelProcesos.add(lblProcesosDisp);
@@ -138,7 +138,7 @@ public class JFramePrincipal extends JFrame implements ActionListener{
 		
 		//Panel Modelos de Memoria
 		panelModMemoria = new JPanel();
-		panelModMemoria.setBorder(new TitledBorder(null, "Modelo de Memoria", TitledBorder.LEADING, TitledBorder.TOP, null, null));
+		panelModMemoria.setBorder(new TitledBorder(null, "Tipo de Memoria", TitledBorder.LEADING, TitledBorder.TOP, null, null));
 		panelModMemoria.setBounds(10, 370, 180, 183);
 		panelPrincipal.add(panelModMemoria);
 		panelModMemoria.setLayout(null);
@@ -160,7 +160,7 @@ public class JFramePrincipal extends JFrame implements ActionListener{
 		
 		//Panel Algoritmo Asignacion
 		panelAsignacion = new JPanel();
-		panelAsignacion.setBorder(new TitledBorder(null, "Algoritmo de Asignacion", TitledBorder.LEADING, TitledBorder.TOP, null, null));
+		panelAsignacion.setBorder(new TitledBorder(null, "Algoritmo de Gestion", TitledBorder.LEADING, TitledBorder.TOP, null, null));
 		panelAsignacion.setBounds(200, 370, 180, 183);
 		panelPrincipal.add(panelAsignacion);
 		panelAsignacion.setLayout(null);
@@ -257,13 +257,13 @@ public class JFramePrincipal extends JFrame implements ActionListener{
 		lblKB1.setBounds(135, 105, 65, 13);
 		panelMemoria.add(lblKB1);
 
-		fragmentation = new JLabel("Fragmentación Generada");
-		fragmentation.setBounds(135, 125, 115, 13);
+		fragmentation = new JLabel("<html>Fragmentación<br>Generada</html>");
+		fragmentation.setBounds(135, 125, 115, 30);
 		fragmentation.setVisible(true);
 		panelMemoria.add(fragmentation);
 
 		fragmentationKB = new JLabel("KB");
-		fragmentationKB.setBounds(135, 145,115,13);
+		fragmentationKB.setBounds(135, 160,115,13);
 		panelMemoria.add(fragmentationKB);
 
 		dibujoMemoria = dibujoProcesos.getDibujoMemLibre();
