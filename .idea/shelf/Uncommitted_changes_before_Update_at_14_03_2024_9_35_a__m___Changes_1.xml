@@ -1,0 +1,54 @@
+<changelist name="Uncommitted_changes_before_Update_at_14_03_2024_9_35_a__m__[Changes]1" date="1710426925416" recycled="true" deleted="true">
+  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_14_03_2024_9_35_a__m__[Changes]1/shelved.patch" />
+  <option name="DESCRIPTION" value="Uncommitted changes before Update at 14/03/2024 9:35 a. m. [Changes]" />
+  <binary>
+    <option name="BEFORE_PATH" value="bin/Logica/ParticionesEstFijas.class" />
+    <option name="AFTER_PATH" value="bin/Logica/ParticionesEstFijas.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_14_03_2024_9_35_a__m__[Changes]1/ParticionesEstFijas.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="bin/Interfaz/PanelDibujoProc.class" />
+    <option name="AFTER_PATH" value="bin/Interfaz/PanelDibujoProc.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_14_03_2024_9_35_a__m__[Changes]1/PanelDibujoProc.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="bin/Logica/Particion.class" />
+    <option name="AFTER_PATH" value="bin/Logica/Particion.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_14_03_2024_9_35_a__m__[Changes]1/Particion.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="bin/Run/Main$1.class" />
+    <option name="AFTER_PATH" value="bin/Run/Main$1.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_14_03_2024_9_35_a__m__[Changes]1/Main$1.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="bin/Logica/ParticionesDinamicas.class" />
+    <option name="AFTER_PATH" value="bin/Logica/ParticionesDinamicas.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_14_03_2024_9_35_a__m__[Changes]1/ParticionesDinamicas.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="bin/Logica/Proceso.class" />
+    <option name="AFTER_PATH" value="bin/Logica/Proceso.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_14_03_2024_9_35_a__m__[Changes]1/Proceso.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="bin/Interfaz/JFramePrincipal.class" />
+    <option name="AFTER_PATH" value="bin/Interfaz/JFramePrincipal.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_14_03_2024_9_35_a__m__[Changes]1/JFramePrincipal.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="bin/Interfaz/PanelDibujoMem.class" />
+    <option name="AFTER_PATH" value="bin/Interfaz/PanelDibujoMem.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_14_03_2024_9_35_a__m__[Changes]1/PanelDibujoMem.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="bin/Run/Main.class" />
+    <option name="AFTER_PATH" value="bin/Run/Main.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_14_03_2024_9_35_a__m__[Changes]1/Main.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="bin/Logica/ProcesosDisponibles.class" />
+    <option name="AFTER_PATH" value="bin/Logica/ProcesosDisponibles.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_14_03_2024_9_35_a__m__[Changes]1/ProcesosDisponibles.class" />
+  </binary>
+</changelist>
