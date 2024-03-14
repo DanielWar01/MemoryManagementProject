@@ -14,7 +14,7 @@ import javax.swing.border.TitledBorder;
 import Logica.Particion;
 import Logica.Proceso;
 import Logica.ProcesosDisponibles;
-
+import Interfaz.PanelDibujoMem;
 import java.awt.Label;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
