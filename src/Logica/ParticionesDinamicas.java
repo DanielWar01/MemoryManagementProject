@@ -82,7 +82,6 @@ public class ParticionesDinamicas {
 					procesoAgregado = false;
 				}
 			}
-
 			//Mejor ajuste
 			if (asignacion==2){
 				for(int i=1; i<particiones.length; i++) {
@@ -112,7 +111,6 @@ public class ParticionesDinamicas {
 					contadorPID++;
 					memTotalLibre = memTotalLibre - proceso.getTamano();
 					arrayListToArray();
-
 					
 					procesoAgregado = true;
 				}else {
