@@ -16,7 +16,7 @@ public class ParticionesDinamicas {
 	
 	
 	
-	//Contador que permite asignar PID a cada proceso 
+	//Contador que permite asignar PID a cada   proceso
 	// En este modelo contadorPID+1 servira para identificar la particion
 	int contadorPID = 1;
 	//Metodo de asignacion
