@@ -1,0 +1,54 @@
+<changelist name="Uncommitted_changes_before_Checkout_at_13_03_2024_9_01_p_ m__[Changes]1" date="1710381689910" recycled="true" deleted="true">
+  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_13_03_2024_9_01_p_ m__[Changes]1/shelved.patch" />
+  <option name="DESCRIPTION" value="Uncommitted changes before Checkout at 13/03/2024 9:01 p. m. [Changes]" />
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/MemoryManagementProject/Logic/Memory.class" />
+    <option name="AFTER_PATH" value="out/production/MemoryManagementProject/Logic/Memory.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_13_03_2024_9_01_p_ m__[Changes]1/Memory.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/MemoryManagementProject/Interface/MainMenu.class" />
+    <option name="AFTER_PATH" value="out/production/MemoryManagementProject/Interface/MainMenu.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_13_03_2024_9_01_p_ m__[Changes]1/MainMenu.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/MemoryManagementProject/Logic/Process.class" />
+    <option name="AFTER_PATH" value="out/production/MemoryManagementProject/Logic/Process.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_13_03_2024_9_01_p_ m__[Changes]1/Process.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/MemoryManagementProject/Interface/WindowMemoryDynamic.class" />
+    <option name="AFTER_PATH" value="out/production/MemoryManagementProject/Interface/WindowMemoryDynamic.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_13_03_2024_9_01_p_ m__[Changes]1/WindowMemoryDynamic.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/MemoryManagementProject/Interface/HandlingEvents.class" />
+    <option name="AFTER_PATH" value="out/production/MemoryManagementProject/Interface/HandlingEvents.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_13_03_2024_9_01_p_ m__[Changes]1/HandlingEvents.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/MemoryManagementProject/Interface/Runner.class" />
+    <option name="AFTER_PATH" value="out/production/MemoryManagementProject/Interface/Runner.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_13_03_2024_9_01_p_ m__[Changes]1/Runner.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/MemoryManagementProject/Interface/WindowMemoryFixed.class" />
+    <option name="AFTER_PATH" value="out/production/MemoryManagementProject/Interface/WindowMemoryFixed.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_13_03_2024_9_01_p_ m__[Changes]1/WindowMemoryFixed.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/MemoryManagementProject/Logic/ManagementMemoryProcess.class" />
+    <option name="AFTER_PATH" value="out/production/MemoryManagementProject/Logic/ManagementMemoryProcess.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_13_03_2024_9_01_p_ m__[Changes]1/ManagementMemoryProcess.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/MemoryManagementProject/Interface/MainWindow.class" />
+    <option name="AFTER_PATH" value="out/production/MemoryManagementProject/Interface/MainWindow.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_13_03_2024_9_01_p_ m__[Changes]1/MainWindow.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="out/test/MemoryManagementProject/Logic/ManagementMemoryProcessTest.class" />
+    <option name="AFTER_PATH" value="out/test/MemoryManagementProject/Logic/ManagementMemoryProcessTest.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_13_03_2024_9_01_p_ m__[Changes]1/ManagementMemoryProcessTest.class" />
+  </binary>
+</changelist>

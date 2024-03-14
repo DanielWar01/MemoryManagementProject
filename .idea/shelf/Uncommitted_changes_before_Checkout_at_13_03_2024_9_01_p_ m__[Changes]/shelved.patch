@@ -1,0 +1,505 @@
+Index: src/Interface/HandlingEvents.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package Interface;\r\n\r\nimport javax.swing.*;\r\nimport java.awt.*;\r\nimport java.awt.event.ActionEvent;\r\nimport java.awt.event.ActionListener;\r\nimport java.awt.event.WindowEvent;\r\nimport java.awt.event.WindowListener;\r\n\r\npublic class HandlingEvents  implements ActionListener, WindowListener {\r\n\r\n    private MainWindow mainWindow;\r\n\r\n    public HandlingEvents(MainWindow mainWindow) {\r\n        this.mainWindow = mainWindow;\r\n    }\r\n\r\n    @Override\r\n    public void actionPerformed(ActionEvent e) {\r\n\r\n    }\r\n\r\n    @Override\r\n    public void windowOpened(WindowEvent e) {\r\n\r\n    }\r\n\r\n    @Override\r\n    public void windowClosing(WindowEvent e) {\r\n        int option = JOptionPane.showConfirmDialog(null, \"Esta segur@\", \"Salir del programa\", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE,\r\n                new ImageIcon(new ImageIcon(\"src/Images/cerrar-sesion.png\").getImage().getScaledInstance(50, 50, Image.SCALE_SMOOTH)));\r\n        if (option == JOptionPane.YES_OPTION) {\r\n            System.exit(0);\r\n        }\r\n    }\r\n\r\n    @Override\r\n    public void windowClosed(WindowEvent e) {\r\n\r\n    }\r\n\r\n    @Override\r\n    public void windowIconified(WindowEvent e) {\r\n\r\n    }\r\n\r\n    @Override\r\n    public void windowDeiconified(WindowEvent e) {\r\n\r\n    }\r\n\r\n    @Override\r\n    public void windowActivated(WindowEvent e) {\r\n\r\n    }\r\n\r\n    @Override\r\n    public void windowDeactivated(WindowEvent e) {\r\n\r\n    }\r\n}\r\n
+===================================================================
+diff --git a/src/Interface/HandlingEvents.java b/src/Interface/HandlingEvents.java
+--- a/src/Interface/HandlingEvents.java	
++++ b/src/Interface/HandlingEvents.java	
+@@ -8,8 +8,8 @@
+ import java.awt.event.WindowListener;
+ 
+ public class HandlingEvents  implements ActionListener, WindowListener {
+-
+     private MainWindow mainWindow;
++    public static final String asignment_memory = "Asignar memoria";
+ 
+     public HandlingEvents(MainWindow mainWindow) {
+         this.mainWindow = mainWindow;
+@@ -17,7 +17,11 @@
+ 
+     @Override
+     public void actionPerformed(ActionEvent e) {
+-
++        switch (e.getActionCommand()){
++            case asignment_memory:
++                mainWindow.managmentMemoryFixed();
++                break;
++        }
+     }
+ 
+     @Override
+@@ -28,7 +32,7 @@
+     @Override
+     public void windowClosing(WindowEvent e) {
+         int option = JOptionPane.showConfirmDialog(null, "Esta segur@", "Salir del programa", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE,
+-                new ImageIcon(new ImageIcon("src/Images/cerrar-sesion.png").getImage().getScaledInstance(50, 50, Image.SCALE_SMOOTH)));
++                new ImageIcon(new ImageIcon("Images/cerrar-sesion.png").getImage().getScaledInstance(50, 50, Image.SCALE_SMOOTH)));
+         if (option == JOptionPane.YES_OPTION) {
+             System.exit(0);
+         }
+Index: src/Interface/MainMenu.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package Interface;\r\n\r\nimport javax.swing.*;\r\nimport java.awt.*;\r\nimport java.awt.event.InputEvent;\r\nimport java.awt.event.KeyEvent;\r\n\r\npublic class MainMenu extends JMenuBar {\r\n    private JMenu methodFixed;\r\n    private JMenu methodDynamic;\r\n\r\n    private JMenuItem fixedPartition;\r\n    private JMenuItem firstFit;\r\n    private JMenuItem bestFit;\r\n    private JMenuItem nextFit;\r\n\r\n    private MainWindow mainWindow;\r\n\r\n    public MainMenu(MainWindow mainWindow){\r\n        this.mainWindow = mainWindow;\r\n        beginComponents();\r\n        addComponents();\r\n    }\r\n\r\n    public void beginComponents(){\r\n        methodFixed = new JMenu(\"Primer método\");\r\n        methodFixed.setIcon(new ImageIcon(new ImageIcon(\"Images/notas-fijadas.png\").getImage().getScaledInstance(30,30,Image.SCALE_SMOOTH)));\r\n\r\n        methodDynamic = new JMenu(\"Segundo método\");\r\n        methodDynamic.setIcon(new ImageIcon(new ImageIcon(\"Images/proceso.png\").getImage().getScaledInstance(30,30,Image.SCALE_SMOOTH)));\r\n\r\n        fixedPartition = new JMenuItem(\"Partición fija\");\r\n        fixedPartition.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_F, InputEvent.CTRL_MASK));\r\n        fixedPartition.setIcon(new ImageIcon(new ImageIcon(\"Images/fijado.png\").getImage().getScaledInstance(30,30,Image.SCALE_SMOOTH)));\r\n        fixedPartition.addActionListener((event) -> mainWindow.getWindowMemoryFixed().setVisible(true));\r\n        fixedPartition.addActionListener((event) -> mainWindow.addWindows(event));\r\n\r\n        firstFit = new JMenuItem(\"Primer ajuste\");\r\n        firstFit.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_P, InputEvent.CTRL_MASK));\r\n        firstFit.setIcon(new ImageIcon(new ImageIcon(\"Images/ganador.png\").getImage().getScaledInstance(30,30,Image.SCALE_SMOOTH)));\r\n        firstFit.addActionListener((event) -> mainWindow.getWindowMemoryDynamic().setVisible(true));\r\n        firstFit.addActionListener((event) -> mainWindow.getWindowMemoryDynamic().setTitle(\"Gestion de memoria por particiones variables (Método Primer Ajuste)\"));\r\n        firstFit.addActionListener((event) -> mainWindow.addWindows(event));\r\n\r\n        bestFit = new JMenuItem(\"Mejor ajuste\");\r\n        bestFit.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_M, InputEvent.CTRL_MASK));\r\n        bestFit.setIcon(new ImageIcon(new ImageIcon(\"Images/productividad.png\").getImage().getScaledInstance(30,30,Image.SCALE_SMOOTH)));\r\n        bestFit.addActionListener((event) -> mainWindow.getWindowMemoryDynamic().setVisible(true));\r\n        bestFit.addActionListener((event) -> mainWindow.getWindowMemoryDynamic().setTitle(\"Gestion de memoria por particiones variables (Método Mejor Ajuste)\"));\r\n        bestFit.addActionListener((event) -> mainWindow.addWindows(event));\r\n\r\n        nextFit = new JMenuItem(\"Siguiente ajuste\");\r\n        nextFit.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_S, InputEvent.CTRL_MASK));\r\n        nextFit.setIcon(new ImageIcon(new ImageIcon(\"Images/flecha-correcta.png\").getImage().getScaledInstance(30,30,Image.SCALE_SMOOTH)));\r\n        nextFit.addActionListener((event) -> mainWindow.getWindowMemoryDynamic().setVisible(true));\r\n        nextFit.addActionListener((event) -> mainWindow.getWindowMemoryDynamic().setTitle(\"Gestion de memoria por particiones variables (Método Siguiente Ajuste)\"));\r\n        nextFit.addActionListener((event) -> mainWindow.addWindows(event));\r\n        //hola\r\n\r\n    }\r\n\r\n    public void addComponents() {\r\n        methodFixed.add(fixedPartition);\r\n        add(methodFixed);\r\n\r\n        methodDynamic.add(firstFit);\r\n        methodDynamic.add(bestFit);\r\n        methodDynamic.add(nextFit);\r\n        add(methodDynamic);\r\n    }\r\n\r\n    public Object getFixedPartition(){\r\n        return fixedPartition;\r\n    }\r\n\r\n    public Object getFirstFit(){\r\n        return firstFit;\r\n    }\r\n\r\n    public Object getBestFit(){\r\n        return bestFit;\r\n    }\r\n\r\n    public Object getNextFit(){\r\n        return nextFit;\r\n    }\r\n\r\n}\r\n
+===================================================================
+diff --git a/src/Interface/MainMenu.java b/src/Interface/MainMenu.java
+--- a/src/Interface/MainMenu.java	
++++ b/src/Interface/MainMenu.java	
+@@ -55,7 +55,6 @@
+         nextFit.addActionListener((event) -> mainWindow.getWindowMemoryDynamic().setVisible(true));
+         nextFit.addActionListener((event) -> mainWindow.getWindowMemoryDynamic().setTitle("Gestion de memoria por particiones variables (Método Siguiente Ajuste)"));
+         nextFit.addActionListener((event) -> mainWindow.addWindows(event));
+-        //hola
+ 
+     }
+ 
+Index: src/Logic/Process.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package Logic;\r\n\r\npublic class Process {\r\n    private String PID;\r\n    private int memory;\r\n    private String status;\r\n\r\n    public Process(String PID, int memory, String status) {\r\n        this.PID = PID;\r\n        this.memory = memory;\r\n        this.status = status;\r\n    }\r\n\r\n    public String getPID() {\r\n        return PID;\r\n    }\r\n\r\n    public void setPID(String PID) {\r\n        this.PID = PID;\r\n    }\r\n\r\n    public int getMemory() {\r\n        return memory;\r\n    }\r\n\r\n    public void setMemory(int memory) {\r\n        this.memory = memory;\r\n    }\r\n\r\n    public String getStatus() {\r\n        return status;\r\n    }\r\n\r\n    public void setStatus(String status) {\r\n        this.status = status;\r\n    }\r\n\r\n    @Override\r\n    public String toString() {\r\n        return \"Process{\" +\r\n                \"PID=\" + PID +\r\n                \", memory=\" + memory +\r\n                \", status='\" + status + '\\'' +\r\n                '}';\r\n    }\r\n}\r\n
+===================================================================
+diff --git a/src/Logic/Process.java b/src/Logic/Process.java
+--- a/src/Logic/Process.java	
++++ b/src/Logic/Process.java	
+@@ -3,12 +3,10 @@
+ public class Process {
+     private String PID;
+     private int memory;
+-    private String status;
+ 
+-    public Process(String PID, int memory, String status) {
++    public Process(String PID, int memory) {
+         this.PID = PID;
+         this.memory = memory;
+-        this.status = status;
+     }
+ 
+     public String getPID() {
+@@ -27,20 +25,12 @@
+         this.memory = memory;
+     }
+ 
+-    public String getStatus() {
+-        return status;
+-    }
+-
+-    public void setStatus(String status) {
+-        this.status = status;
+-    }
+ 
+     @Override
+     public String toString() {
+         return "Process{" +
+                 "PID=" + PID +
+                 ", memory=" + memory +
+-                ", status='" + status + '\'' +
+                 '}';
+     }
+ }
+Index: src/Interface/MainWindow.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package Interface;\r\n\r\nimport javax.swing.*;\r\nimport java.awt.*;\r\n\r\npublic class MainWindow extends JFrame {\r\n    private JDesktopPane desktopPane;\r\n    private WindowMemoryFixed windowMemoryFixed;\r\n    private WindowMemoryDynamic windowMemoryDynamic;\r\n    private MainMenu mainMenu;\r\n\r\n    public MainWindow() {\r\n        setTitle(\"Administrador de Memoria\");\r\n        setSize(800, 600);\r\n        setLocationRelativeTo(null);\r\n        setResizable(true);\r\n        setLayout(new BorderLayout());\r\n        setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);\r\n        begin();\r\n\r\n    }\r\n\r\n    private void begin() {\r\n        beginComponents();\r\n        addComponents();\r\n    }\r\n\r\n    public void addWindows(Object frame){\r\n        add(desktopPane, BorderLayout.CENTER);\r\n        if (frame != mainMenu.getFixedPartition()) {\r\n            windowMemoryFixed.setVisible(false);\r\n        }\r\n        if (frame != mainMenu.getFirstFit() || frame != mainMenu.getBestFit() || frame != mainMenu.getNextFit()){\r\n            windowMemoryDynamic.setVisible(false);\r\n        }\r\n    }\r\n\r\n    private void beginComponents() {\r\n        desktopPane = new JDesktopPane();\r\n        windowMemoryFixed = new WindowMemoryFixed(desktopPane, this);\r\n        windowMemoryDynamic = new WindowMemoryDynamic(desktopPane, this);\r\n        mainMenu = new MainMenu(this);\r\n    }\r\n\r\n    public WindowMemoryFixed getWindowMemoryFixed(){\r\n        return windowMemoryFixed;\r\n    }\r\n\r\n    public WindowMemoryDynamic getWindowMemoryDynamic(){\r\n        return windowMemoryDynamic;\r\n    }\r\n\r\n    private void addComponents() {\r\n        setJMenuBar(mainMenu);\r\n        addWindowListener(new HandlingEvents(this));\r\n    }\r\n}\r\n
+===================================================================
+diff --git a/src/Interface/MainWindow.java b/src/Interface/MainWindow.java
+--- a/src/Interface/MainWindow.java	
++++ b/src/Interface/MainWindow.java	
+@@ -1,7 +1,12 @@
+ package Interface;
+ 
++import Logic.ManagementMemoryProcess;
++import Logic.Memory;
++import Logic.Process;
++
+ import javax.swing.*;
+ import java.awt.*;
++import java.util.Random;
+ 
+ public class MainWindow extends JFrame {
+     private JDesktopPane desktopPane;
+@@ -9,6 +14,8 @@
+     private WindowMemoryDynamic windowMemoryDynamic;
+     private MainMenu mainMenu;
+ 
++    private ManagementMemoryProcess managementMemoryProcess;
++
+     public MainWindow() {
+         setTitle("Administrador de Memoria");
+         setSize(800, 600);
+@@ -36,6 +43,8 @@
+     }
+ 
+     private void beginComponents() {
++        managementMemoryProcess = new ManagementMemoryProcess();
++
+         desktopPane = new JDesktopPane();
+         windowMemoryFixed = new WindowMemoryFixed(desktopPane, this);
+         windowMemoryDynamic = new WindowMemoryDynamic(desktopPane, this);
+@@ -50,6 +59,51 @@
+         return windowMemoryDynamic;
+     }
+ 
++    public String generarPid(int longitud) {
++        String caracteres = "0123456789ABCDEFGHIJKLMNOPQRSTUVXYZ";
++        StringBuilder pid = new StringBuilder();
++
++        Random random = new Random();
++        for (int i = 0; i < longitud; i++) {
++            int indice = random.nextInt(caracteres.length());
++            pid.append(caracteres.charAt(indice));
++        }
++
++        return pid.toString();
++    }
++
++    public void managmentMemoryFixed(){
++        String[] data = {windowMemoryFixed.getPartitions(), windowMemoryFixed.getSpaceMemory(), windowMemoryFixed.getProcesses()};
++        if ( data[0].length() != 0 && data[1].length() != 0 && data[2].length() != 0){
++            windowMemoryFixed.cleanFields();
++            managementMemoryProcess.setFixedPartitions(Integer.parseInt(data[0]), Integer.parseInt(data[1]));
++            for (int i = 0; i < Integer.parseInt(data[2]); i++) {
++                Process process = new Process(generarPid(6), (int)(Math.random()*32+1));
++                managementMemoryProcess.addProcess(process);
++            }
++            for (int i = 0; i < managementMemoryProcess.getProcessList().size(); i++) {
++                try {
++                    Thread.sleep(2000);
++                    managementMemoryProcess.actionMemoryFixed(managementMemoryProcess.getProcessList().get(i).getPID(), true);
++                    showPartitionsFixed();
++                } catch (InterruptedException e) {
++                    e.printStackTrace();
++                }
++            }
++        }else{
++            JOptionPane.showMessageDialog(null, "Llena todas las casillas", "Advertencia", JOptionPane.PLAIN_MESSAGE);
++        }
++    }
++
++    public void showPartitionsFixed(){
++        windowMemoryFixed.removeRows(windowMemoryFixed.getDtm().getRowCount());
++        for (Memory memory : managementMemoryProcess.getSystemMemoryFixed()){
++            String[] memoryFixed = {memory.getMemoryAddress(), String.valueOf(memory.isEnabled()), String.valueOf(memory.getSpaceSize()), memory.getPID()};
++            windowMemoryFixed.addRow(memoryFixed);
++        }
++        windowMemoryFixed.getDtm().fireTableDataChanged();
++    }
++
+     private void addComponents() {
+         setJMenuBar(mainMenu);
+         addWindowListener(new HandlingEvents(this));
+Index: src/Interface/WindowMemoryFixed.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package Interface;\r\n\r\nimport javax.swing.*;\r\nimport java.awt.*;\r\nimport java.awt.event.KeyEvent;\r\nimport java.awt.event.KeyListener;\r\n\r\npublic class WindowMemoryFixed extends JInternalFrame implements KeyListener {\r\n\r\n\r\n    private GridBagConstraints gbc = new GridBagConstraints();\r\n    private JDesktopPane desktopPane;\r\n    private MainWindow mainWindow;\r\n\r\n    public WindowMemoryFixed(JDesktopPane desktopPane, MainWindow mainWindow){\r\n        this.desktopPane = desktopPane;\r\n        this.mainWindow = mainWindow;\r\n        setTitle(\"Gestion de memoria por particiones fijas\");\r\n        setClosable(true);\r\n        setIconifiable(true);\r\n        setSize(700, 450);\r\n        setLocation(40, 40);\r\n        setDefaultCloseOperation(HIDE_ON_CLOSE);\r\n        setResizable(true);\r\n        desktopPane.add(this);\r\n        setLayout(null);\r\n        begin();\r\n    }\r\n\r\n    private void begin() {\r\n        beginComponents();\r\n        addComponents();\r\n    }\r\n\r\n    private void beginComponents() {\r\n\r\n    }\r\n\r\n    private void addComponents() {\r\n    }\r\n\r\n    @Override\r\n    public void keyTyped(KeyEvent e) {\r\n\r\n    }\r\n\r\n    @Override\r\n    public void keyPressed(KeyEvent e) {\r\n\r\n    }\r\n\r\n    @Override\r\n    public void keyReleased(KeyEvent e) {\r\n\r\n    }\r\n}\r\n
+===================================================================
+diff --git a/src/Interface/WindowMemoryFixed.java b/src/Interface/WindowMemoryFixed.java
+--- a/src/Interface/WindowMemoryFixed.java	
++++ b/src/Interface/WindowMemoryFixed.java	
+@@ -1,12 +1,20 @@
+ package Interface;
+ 
+ import javax.swing.*;
++import javax.swing.table.DefaultTableModel;
+ import java.awt.*;
+ import java.awt.event.KeyEvent;
+ import java.awt.event.KeyListener;
+ 
+ public class WindowMemoryFixed extends JInternalFrame implements KeyListener {
+ 
++    private JTextField partitions;
++    private JTextField spaceMemory;
++    private JTextField processes;
++    private JButton asignment;
++    private JLabel labelPartitions, labelSpaceMemory, labelProcesses;
++    private DefaultTableModel dtm;
++    private JTable memory;
+ 
+     private GridBagConstraints gbc = new GridBagConstraints();
+     private JDesktopPane desktopPane;
+@@ -23,7 +31,7 @@
+         setDefaultCloseOperation(HIDE_ON_CLOSE);
+         setResizable(true);
+         desktopPane.add(this);
+-        setLayout(null);
++        setLayout(new GridBagLayout());
+         begin();
+     }
+ 
+@@ -33,15 +41,126 @@
+     }
+ 
+     private void beginComponents() {
++        Font fontOne = new Font("Roboto Mono", Font.BOLD, 18);
++        Font fontTwo = new Font("Arial", Font.ITALIC, 15);
++
++        partitions = new JTextField();
++        partitions.addKeyListener(this);
++        partitions.setFont(fontTwo);
++
++        labelPartitions = new JLabel("Particiones");
++        labelPartitions.setFont(fontOne);
++
++        spaceMemory = new JTextField();
++        spaceMemory.addKeyListener(this);
++        spaceMemory.setFont(fontTwo);
+ 
++        labelSpaceMemory = new JLabel("Espacio de memoria");
++        labelSpaceMemory.setFont(fontOne);
++
++        processes = new JTextField();
++        processes.addKeyListener(this);
++        processes.setFont(fontTwo);
++
++        labelProcesses = new JLabel("No. Procesos");
++        labelProcesses.setFont(fontOne);
++
++        asignment = new JButton("Comenzar gestión");
++        asignment.setActionCommand(HandlingEvents.asignment_memory);
++        asignment.addActionListener(new HandlingEvents(mainWindow));
++        asignment.setFont(fontOne);
++
++        String[] titles = {"Dirección memoria", "Disponibilidad", "Espacio", "PID Proceso"};
++        dtm = new DefaultTableModel(titles, 1);
++        memory = new JTable(dtm);
+     }
+ 
+     private void addComponents() {
++        gbc = new GridBagConstraints();
++        gbc.gridx = 0;
++        gbc.gridy = 0;
++        gbc.gridwidth = 1;
++        gbc.gridheight = 1;
++        gbc.weightx = 0.3;
++        gbc.weighty = 1;
++        gbc.fill = GridBagConstraints.HORIZONTAL;
++        add(labelPartitions, gbc);
++
++        gbc.gridx = 1;
++        gbc.weightx = 1;
++        add(partitions, gbc);
++
++        gbc.gridx = 2;
++        gbc.weightx = 0.3;
++        add(labelSpaceMemory, gbc);
++
++        gbc.gridx = 3;
++        gbc.weightx = 1;
++        add(spaceMemory, gbc);
++
++        gbc.gridy = 1;
++        gbc.gridx = 0;
++        add(labelProcesses, gbc);
++
++        gbc.gridx = 1;
++        add(processes, gbc);
++
++        gbc.gridx = 2;
++        gbc.gridwidth = 2;
++        gbc.fill = GridBagConstraints.HORIZONTAL;
++        add(asignment, gbc);
++
++        gbc.gridx = 0;
++        gbc.gridy = 2;
++        gbc.gridwidth = 4;
++        gbc.gridheight = 6;
++        gbc.fill = GridBagConstraints.BOTH;
++        add(new JScrollPane(memory), gbc);
++    }
++
++    public void cleanFields(){
++        partitions.setText("");
++        processes.setText("");
++        spaceMemory.setText("");
++    }
++
++    public void addRow(String data[]){
++        dtm.addRow(data);
++    }
++
++    public void removeRows(int count){
++        for (int i = 0; i < count; i++) {
++            dtm.removeRow(0);
++        }
++    }
++
++    public void updateTable(){
++        dtm.fireTableDataChanged();
++    }
++
++    public String getPartitions(){
++        return partitions.getText();
++    }
++
++    public String getSpaceMemory(){
++        return spaceMemory.getText();
++    }
++
++    public String getProcesses(){
++        return processes.getText();
++    }
++
++    public DefaultTableModel getDtm(){
++        return dtm;
+     }
+ 
+     @Override
+     public void keyTyped(KeyEvent e) {
+-
++        if (e.getSource() == partitions || e.getSource() == processes || e.getSource() == spaceMemory){
++            if (!Character.isDigit(e.getKeyChar()) ) {
++                e.consume();
++            }
++        }
+     }
+ 
+     @Override
+Index: MemoryManagementProject.iml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<module type=\"JAVA_MODULE\" version=\"4\">\r\n  <component name=\"NewModuleRootManager\" inherit-compiler-output=\"true\">\r\n    <exclude-output />\r\n    <content url=\"file://$MODULE_DIR$\">\r\n      <sourceFolder url=\"file://$MODULE_DIR$/Test/Source\" isTestSource=\"true\" />\r\n      <sourceFolder url=\"file://$MODULE_DIR$/src\" isTestSource=\"false\" />\r\n    </content>\r\n    <orderEntry type=\"inheritedJdk\" />\r\n    <orderEntry type=\"sourceFolder\" forTests=\"false\" />\r\n    <orderEntry type=\"module-library\" scope=\"TEST\">\r\n      <library name=\"JUnit5.7.0\">\r\n        <CLASSES>\r\n          <root url=\"jar://$MAVEN_REPOSITORY$/org/junit/jupiter/junit-jupiter/5.7.0/junit-jupiter-5.7.0.jar!/\" />\r\n          <root url=\"jar://$MAVEN_REPOSITORY$/org/junit/jupiter/junit-jupiter-api/5.7.0/junit-jupiter-api-5.7.0.jar!/\" />\r\n          <root url=\"jar://$MAVEN_REPOSITORY$/org/apiguardian/apiguardian-api/1.1.0/apiguardian-api-1.1.0.jar!/\" />\r\n          <root url=\"jar://$MAVEN_REPOSITORY$/org/opentest4j/opentest4j/1.2.0/opentest4j-1.2.0.jar!/\" />\r\n          <root url=\"jar://$MAVEN_REPOSITORY$/org/junit/platform/junit-platform-commons/1.7.0/junit-platform-commons-1.7.0.jar!/\" />\r\n          <root url=\"jar://$MAVEN_REPOSITORY$/org/junit/jupiter/junit-jupiter-params/5.7.0/junit-jupiter-params-5.7.0.jar!/\" />\r\n          <root url=\"jar://$MAVEN_REPOSITORY$/org/junit/jupiter/junit-jupiter-engine/5.7.0/junit-jupiter-engine-5.7.0.jar!/\" />\r\n          <root url=\"jar://$MAVEN_REPOSITORY$/org/junit/platform/junit-platform-engine/1.7.0/junit-platform-engine-1.7.0.jar!/\" />\r\n        </CLASSES>\r\n        <JAVADOC />\r\n        <SOURCES />\r\n      </library>\r\n    </orderEntry>\r\n    <orderEntry type=\"module-library\">\r\n      <library name=\"JUnit4\">\r\n        <CLASSES>\r\n          <root url=\"jar://$MAVEN_REPOSITORY$/junit/junit/4.13.1/junit-4.13.1.jar!/\" />\r\n          <root url=\"jar://$MAVEN_REPOSITORY$/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar!/\" />\r\n        </CLASSES>\r\n        <JAVADOC />\r\n        <SOURCES />\r\n      </library>\r\n    </orderEntry>\r\n    <orderEntry type=\"module-library\">\r\n      <library>\r\n        <CLASSES>\r\n          <root url=\"jar://$MAVEN_REPOSITORY$/org/junit/jupiter/junit-jupiter/5.7.0/junit-jupiter-5.7.0.jar!/\" />\r\n          <root url=\"jar://$MAVEN_REPOSITORY$/org/junit/jupiter/junit-jupiter-api/5.7.0/junit-jupiter-api-5.7.0.jar!/\" />\r\n          <root url=\"jar://$MAVEN_REPOSITORY$/org/apiguardian/apiguardian-api/1.1.0/apiguardian-api-1.1.0.jar!/\" />\r\n          <root url=\"jar://$MAVEN_REPOSITORY$/org/opentest4j/opentest4j/1.2.0/opentest4j-1.2.0.jar!/\" />\r\n          <root url=\"jar://$MAVEN_REPOSITORY$/org/junit/platform/junit-platform-commons/1.7.0/junit-platform-commons-1.7.0.jar!/\" />\r\n          <root url=\"jar://$MAVEN_REPOSITORY$/org/junit/jupiter/junit-jupiter-params/5.7.0/junit-jupiter-params-5.7.0.jar!/\" />\r\n          <root url=\"jar://$MAVEN_REPOSITORY$/org/junit/jupiter/junit-jupiter-engine/5.7.0/junit-jupiter-engine-5.7.0.jar!/\" />\r\n          <root url=\"jar://$MAVEN_REPOSITORY$/org/junit/platform/junit-platform-engine/1.7.0/junit-platform-engine-1.7.0.jar!/\" />\r\n        </CLASSES>\r\n        <JAVADOC />\r\n        <SOURCES />\r\n      </library>\r\n    </orderEntry>\r\n  </component>\r\n</module>
+===================================================================
+diff --git a/MemoryManagementProject.iml b/MemoryManagementProject.iml
+--- a/MemoryManagementProject.iml	
++++ b/MemoryManagementProject.iml	
+@@ -3,52 +3,9 @@
+   <component name="NewModuleRootManager" inherit-compiler-output="true">
+     <exclude-output />
+     <content url="file://$MODULE_DIR$">
+-      <sourceFolder url="file://$MODULE_DIR$/Test/Source" isTestSource="true" />
+       <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" />
+     </content>
+     <orderEntry type="inheritedJdk" />
+     <orderEntry type="sourceFolder" forTests="false" />
+-    <orderEntry type="module-library" scope="TEST">
+-      <library name="JUnit5.7.0">
+-        <CLASSES>
+-          <root url="jar://$MAVEN_REPOSITORY$/org/junit/jupiter/junit-jupiter/5.7.0/junit-jupiter-5.7.0.jar!/" />
+-          <root url="jar://$MAVEN_REPOSITORY$/org/junit/jupiter/junit-jupiter-api/5.7.0/junit-jupiter-api-5.7.0.jar!/" />
+-          <root url="jar://$MAVEN_REPOSITORY$/org/apiguardian/apiguardian-api/1.1.0/apiguardian-api-1.1.0.jar!/" />
+-          <root url="jar://$MAVEN_REPOSITORY$/org/opentest4j/opentest4j/1.2.0/opentest4j-1.2.0.jar!/" />
+-          <root url="jar://$MAVEN_REPOSITORY$/org/junit/platform/junit-platform-commons/1.7.0/junit-platform-commons-1.7.0.jar!/" />
+-          <root url="jar://$MAVEN_REPOSITORY$/org/junit/jupiter/junit-jupiter-params/5.7.0/junit-jupiter-params-5.7.0.jar!/" />
+-          <root url="jar://$MAVEN_REPOSITORY$/org/junit/jupiter/junit-jupiter-engine/5.7.0/junit-jupiter-engine-5.7.0.jar!/" />
+-          <root url="jar://$MAVEN_REPOSITORY$/org/junit/platform/junit-platform-engine/1.7.0/junit-platform-engine-1.7.0.jar!/" />
+-        </CLASSES>
+-        <JAVADOC />
+-        <SOURCES />
+-      </library>
+-    </orderEntry>
+-    <orderEntry type="module-library">
+-      <library name="JUnit4">
+-        <CLASSES>
+-          <root url="jar://$MAVEN_REPOSITORY$/junit/junit/4.13.1/junit-4.13.1.jar!/" />
+-          <root url="jar://$MAVEN_REPOSITORY$/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar!/" />
+-        </CLASSES>
+-        <JAVADOC />
+-        <SOURCES />
+-      </library>
+-    </orderEntry>
+-    <orderEntry type="module-library">
+-      <library>
+-        <CLASSES>
+-          <root url="jar://$MAVEN_REPOSITORY$/org/junit/jupiter/junit-jupiter/5.7.0/junit-jupiter-5.7.0.jar!/" />
+-          <root url="jar://$MAVEN_REPOSITORY$/org/junit/jupiter/junit-jupiter-api/5.7.0/junit-jupiter-api-5.7.0.jar!/" />
+-          <root url="jar://$MAVEN_REPOSITORY$/org/apiguardian/apiguardian-api/1.1.0/apiguardian-api-1.1.0.jar!/" />
+-          <root url="jar://$MAVEN_REPOSITORY$/org/opentest4j/opentest4j/1.2.0/opentest4j-1.2.0.jar!/" />
+-          <root url="jar://$MAVEN_REPOSITORY$/org/junit/platform/junit-platform-commons/1.7.0/junit-platform-commons-1.7.0.jar!/" />
+-          <root url="jar://$MAVEN_REPOSITORY$/org/junit/jupiter/junit-jupiter-params/5.7.0/junit-jupiter-params-5.7.0.jar!/" />
+-          <root url="jar://$MAVEN_REPOSITORY$/org/junit/jupiter/junit-jupiter-engine/5.7.0/junit-jupiter-engine-5.7.0.jar!/" />
+-          <root url="jar://$MAVEN_REPOSITORY$/org/junit/platform/junit-platform-engine/1.7.0/junit-platform-engine-1.7.0.jar!/" />
+-        </CLASSES>
+-        <JAVADOC />
+-        <SOURCES />
+-      </library>
+-    </orderEntry>
+   </component>
+ </module>
+\ No newline at end of file
+Index: Test/Source/Logic/ManagementMemoryProcessTest.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package Logic;\r\n\r\nimport org.junit.jupiter.api.Test;\r\n\r\nimport static org.junit.jupiter.api.Assertions.*;\r\n\r\nclass ManagementMemoryProcessTest {\r\n    private Process process1;\r\n    private Process process2;\r\n    private Process process3;\r\n    private Process process4;\r\n    private Process process5;\r\n    private Process process6;\r\n    private Process process7;\r\n    private Process process8;\r\n    private Process process9;\r\n    private Process process10;\r\n\r\n    private String[] memory1;\r\n    private String[] memory2;\r\n    private String[] memory3;\r\n    private String[] memory4;\r\n\r\n    private ManagementMemoryProcess managementMemoryProcess;\r\n\r\n    public void setup() {\r\n        process1 = new Process(\"123-abc\", (int) (Math.random()*20+1), \"Nuevo\");\r\n        process2 = new Process(\"124-abd\", (int) (Math.random()*20+1), \"Listo\");\r\n        process3 = new Process(\"125-abe\", (int) (Math.random()*20+1), \"En ejecución\");\r\n        process4 = new Process(\"126-abf\", (int) (Math.random()*20+1), \"Nuevo\");\r\n        process5 = new Process(\"127-abg\", (int) (Math.random()*20+1), \"Nuevo\");\r\n        process6 = new Process(\"128-abh\", (int) (Math.random()*20+1), \"En ejecución\");\r\n        process7 = new Process(\"120-abi\", (int) (Math.random()*20+1), \"Nuevo\");\r\n        process8 = new Process(\"130-abj\", (int) (Math.random()*20+1), \"Nuevo\");\r\n        process9 = new Process(\"131-abk\", (int) (Math.random()*20+1), \"En ejecución\");\r\n        process10 = new Process(\"131-abk\", (int) (Math.random()*20+1), \"Nuevo\");\r\n\r\n        managementMemoryProcess = new ManagementMemoryProcess();\r\n\r\n\r\n    }\r\n\r\n    public void setupTwo(){\r\n        setup();\r\n        managementMemoryProcess.addProcess(process1);\r\n        managementMemoryProcess.addProcess(process2);\r\n        managementMemoryProcess.addProcess(process3);\r\n        managementMemoryProcess.addProcess(process4);\r\n        managementMemoryProcess.addProcess(process5);\r\n        managementMemoryProcess.addProcess(process6);\r\n        managementMemoryProcess.addProcess(process7);\r\n        managementMemoryProcess.addProcess(process8);\r\n        managementMemoryProcess.addProcess(process9);\r\n        managementMemoryProcess.addProcess(process10);\r\n\r\n        managementMemoryProcess.setFixedPartitions(16, 256);\r\n    }\r\n\r\n\r\n\r\n    @Test\r\n    void getProcessList() {\r\n        setupTwo();\r\n        for (Process process : managementMemoryProcess.getProcessList()){\r\n            System.out.println(process);\r\n        }\r\n    }\r\n\r\n    @Test\r\n    void getMemory() {\r\n\r\n    }\r\n\r\n    @Test\r\n    void findProcess() {\r\n        setupTwo();\r\n        assertNotNull(managementMemoryProcess.findProcess(process2.getPID()));\r\n        assertNotNull(managementMemoryProcess.findProcess(process3.getPID()));\r\n        assertNotNull(managementMemoryProcess.findProcess(process7.getPID()));\r\n\r\n        assertNull(managementMemoryProcess.findProcess(\"132-abd\"));\r\n        assertNull(managementMemoryProcess.findProcess(\"145-abd\"));\r\n    }\r\n\r\n    @Test\r\n    void addProcess() {\r\n        setup();\r\n        assertTrue(managementMemoryProcess.addProcess(process1));\r\n        assertTrue(managementMemoryProcess.addProcess(process2));\r\n        assertTrue(managementMemoryProcess.addProcess(process3));\r\n        assertTrue(managementMemoryProcess.addProcess(process4));\r\n        assertTrue(managementMemoryProcess.addProcess(process5));\r\n        assertTrue(managementMemoryProcess.addProcess(process6));\r\n        assertTrue(managementMemoryProcess.addProcess(process7));\r\n        assertTrue(managementMemoryProcess.addProcess(process8));\r\n        assertTrue(managementMemoryProcess.addProcess(process9));\r\n\r\n        assertFalse(managementMemoryProcess.addProcess(process10));\r\n    }\r\n\r\n    @Test\r\n    void unifyMemory() {\r\n\r\n    }\r\n\r\n    @Test\r\n    void actionMemory() {\r\n    }\r\n\r\n\r\n    @Test\r\n    void generatorMemoryAddress() {\r\n        setupTwo();\r\n\r\n    }\r\n\r\n    @Test\r\n    void setFixedPartitions() {\r\n        setup();\r\n        managementMemoryProcess.setFixedPartitions(20, 256);\r\n        System.out.println(managementMemoryProcess.getSystemMemoryFixed());\r\n    }\r\n\r\n    @Test\r\n    void actionMemoryFixed() {\r\n        setupTwo();\r\n        System.out.println(managementMemoryProcess.getSystemMemoryFixed().size());\r\n        managementMemoryProcess.actionMemoryFixed(process1.getPID(), true);\r\n        managementMemoryProcess.actionMemoryFixed(process2.getPID(), true);\r\n        managementMemoryProcess.actionMemoryFixed(process3.getPID(), true);\r\n        managementMemoryProcess.actionMemoryFixed(process2.getPID(), false);\r\n        System.out.println(managementMemoryProcess.getSystemMemoryFixed().size());\r\n        for (Memory memory : managementMemoryProcess.getSystemMemoryFixed()){\r\n            System.out.println(memory);\r\n        }\r\n    }\r\n\r\n    @Test\r\n    void testUnifyMemory() {\r\n    }\r\n\r\n    @Test\r\n    void actionMemoryDynamic() {\r\n        setupTwo();\r\n        managementMemoryProcess.setSizeMemoryDynamic(128);\r\n        managementMemoryProcess.actionMemoryDynamic(process1.getPID(), true, 2);\r\n        managementMemoryProcess.actionMemoryDynamic(process2.getPID(), true, 2);\r\n        managementMemoryProcess.actionMemoryDynamic(process3.getPID(), true, 2);\r\n        managementMemoryProcess.actionMemoryDynamic(process4.getPID(), true, 2);\r\n        managementMemoryProcess.actionMemoryDynamic(process2.getPID(), false, 2);\r\n        managementMemoryProcess.actionMemoryDynamic(process3.getPID(), false, 2);\r\n        managementMemoryProcess.actionMemoryDynamic(process6.getPID(), true, 2);\r\n        managementMemoryProcess.actionMemoryDynamic(process7.getPID(), true, 2);\r\n        managementMemoryProcess.actionMemoryDynamic(process1.getPID(), false, 2);\r\n        for (Memory memory : managementMemoryProcess.getMemoryDynamic()){\r\n            System.out.println(memory);\r\n        }\r\n    }\r\n}
+===================================================================
+diff --git a/Test/Source/Logic/ManagementMemoryProcessTest.java b/Test/Source/Logic/ManagementMemoryProcessTest.java
+--- a/Test/Source/Logic/ManagementMemoryProcessTest.java	
++++ b/Test/Source/Logic/ManagementMemoryProcessTest.java	
+@@ -24,16 +24,16 @@
+     private ManagementMemoryProcess managementMemoryProcess;
+ 
+     public void setup() {
+-        process1 = new Process("123-abc", (int) (Math.random()*20+1), "Nuevo");
+-        process2 = new Process("124-abd", (int) (Math.random()*20+1), "Listo");
+-        process3 = new Process("125-abe", (int) (Math.random()*20+1), "En ejecución");
+-        process4 = new Process("126-abf", (int) (Math.random()*20+1), "Nuevo");
+-        process5 = new Process("127-abg", (int) (Math.random()*20+1), "Nuevo");
+-        process6 = new Process("128-abh", (int) (Math.random()*20+1), "En ejecución");
+-        process7 = new Process("120-abi", (int) (Math.random()*20+1), "Nuevo");
+-        process8 = new Process("130-abj", (int) (Math.random()*20+1), "Nuevo");
+-        process9 = new Process("131-abk", (int) (Math.random()*20+1), "En ejecución");
+-        process10 = new Process("131-abk", (int) (Math.random()*20+1), "Nuevo");
++        process1 = new Process("123-abc", (int) (Math.random()*20+1));
++        process2 = new Process("124-abd", (int) (Math.random()*20+1));
++        process3 = new Process("125-abe", (int) (Math.random()*20+1));
++        process4 = new Process("126-abf", (int) (Math.random()*20+1));
++        process5 = new Process("127-abg", (int) (Math.random()*20+1));
++        process6 = new Process("128-abh", (int) (Math.random()*20+1));
++        process7 = new Process("120-abi", (int) (Math.random()*20+1));
++        process8 = new Process("130-abj", (int) (Math.random()*20+1));
++        process9 = new Process("131-abk", (int) (Math.random()*20+1));
++        process10 = new Process("131-abk", (int) (Math.random()*20+1));
+ 
+         managementMemoryProcess = new ManagementMemoryProcess();
+ 
+@@ -144,14 +144,51 @@
+         setupTwo();
+         managementMemoryProcess.setSizeMemoryDynamic(128);
+         managementMemoryProcess.actionMemoryDynamic(process1.getPID(), true, 2);
++        for (Memory memory : managementMemoryProcess.getMemoryDynamic()){
++            System.out.println(memory);
++        }
+         managementMemoryProcess.actionMemoryDynamic(process2.getPID(), true, 2);
++        System.out.println("******************************************************************************");
++        for (Memory memory : managementMemoryProcess.getMemoryDynamic()){
++            System.out.println(memory);
++        }
+         managementMemoryProcess.actionMemoryDynamic(process3.getPID(), true, 2);
++        System.out.println("******************************************************************************");
++        for (Memory memory : managementMemoryProcess.getMemoryDynamic()){
++            System.out.println(memory);
++        }
+         managementMemoryProcess.actionMemoryDynamic(process4.getPID(), true, 2);
++        System.out.println("******************************************************************************");
++        for (Memory memory : managementMemoryProcess.getMemoryDynamic()){
++            System.out.println(memory);
++        }
+         managementMemoryProcess.actionMemoryDynamic(process2.getPID(), false, 2);
++        System.out.println("******************************************************************************");
++        for (Memory memory : managementMemoryProcess.getMemoryDynamic()){
++            System.out.println(memory);
++        }
+         managementMemoryProcess.actionMemoryDynamic(process3.getPID(), false, 2);
++        System.out.println("******************************************************************************");
++        for (Memory memory : managementMemoryProcess.getMemoryDynamic()){
++            System.out.println(memory);
++        }
+         managementMemoryProcess.actionMemoryDynamic(process6.getPID(), true, 2);
++        System.out.println("******************************************************************************");
++        for (Memory memory : managementMemoryProcess.getMemoryDynamic()){
++            System.out.println(memory);
++        }
+         managementMemoryProcess.actionMemoryDynamic(process7.getPID(), true, 2);
++        System.out.println("******************************************************************************");
++        for (Memory memory : managementMemoryProcess.getMemoryDynamic()){
++            System.out.println(memory);
++        }
+         managementMemoryProcess.actionMemoryDynamic(process1.getPID(), false, 2);
++        System.out.println("******************************************************************************");
++        for (Memory memory : managementMemoryProcess.getMemoryDynamic()){
++            System.out.println(memory);
++        }
++        managementMemoryProcess.actionMemoryDynamic(process8.getPID(), true, 2);
++        System.out.println("******************************************************************************");
+         for (Memory memory : managementMemoryProcess.getMemoryDynamic()){
+             System.out.println(memory);
+         }
