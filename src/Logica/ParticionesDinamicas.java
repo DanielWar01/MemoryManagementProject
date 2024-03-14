@@ -43,8 +43,7 @@ public class ParticionesDinamicas {
 		
 		particiones = particionesAr.toArray(new Particion[0]);
 	}
-	
-	
+
 	public boolean añadirProceso(Proceso proceso, int asignacion, boolean compactacion) {
 		
 		int posicion = 0;

@@ -5,30 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a3e9064c-485e-4f96-a03c-95620c4a007c" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Test/Test.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dbnavigator.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MemoryManagementProject.iml" beforeDir="false" afterPath="$PROJECT_DIR$/MemoryManagementProject.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Test/Source/Logic/ManagementMemoryProcessTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Test/Source/Logic/ManagementMemoryProcessTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MemoryManagementProject/Interface/HandlingEvents.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MemoryManagementProject/Interface/HandlingEvents.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MemoryManagementProject/Interface/MainMenu.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MemoryManagementProject/Interface/MainMenu.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MemoryManagementProject/Interface/MainWindow.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MemoryManagementProject/Interface/MainWindow.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MemoryManagementProject/Interface/Runner.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MemoryManagementProject/Interface/Runner.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MemoryManagementProject/Interface/WindowMemoryDynamic.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MemoryManagementProject/Interface/WindowMemoryDynamic.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MemoryManagementProject/Interface/WindowMemoryFixed.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MemoryManagementProject/Interface/WindowMemoryFixed.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MemoryManagementProject/Logic/ManagementMemoryProcess.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MemoryManagementProject/Logic/ManagementMemoryProcess.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MemoryManagementProject/Logic/Memory.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MemoryManagementProject/Logic/Memory.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MemoryManagementProject/Logic/Process.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MemoryManagementProject/Logic/Process.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/MemoryManagementProject/Logic/ManagementMemoryProcessTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/MemoryManagementProject/Logic/ManagementMemoryProcessTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Interface/HandlingEvents.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Interface/HandlingEvents.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Interface/MainMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Interface/MainMenu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Interface/MainWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Interface/MainWindow.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Interface/WindowMemoryFixed.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Interface/WindowMemoryFixed.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Logic/Process.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Logic/Process.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Interfaz/JFramePrincipal.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Interfaz/PanelDibujoMem.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Interfaz/PanelDibujoProc.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Logica/Particion.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Logica/ParticionesDinamicas.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Logica/ParticionesEstFijas.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Logica/Proceso.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Logica/ProcesosDisponibles.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Run/Main$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Run/Main.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,6 +24,11 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="cb1ab96d13613630074c592629304cddaa95ff11" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
@@ -68,23 +61,28 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "C:/Users/SERGIO/Documents/GOMEZ/Operativos/guerrita/MemoryManagementProject",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "preferences.keymap",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RunManager">
-    <configuration name="Runner" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Interface.Runner" />
-      <module name="MemoryManagementProject" />
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Run.Main" />
+      <module name="MemoryManagementProjectt" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="Interface.*" />
@@ -97,7 +95,7 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Runner" />
+        <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
   </component>
@@ -109,11 +107,38 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1710391907240</updated>
-      <workItem from="1710391908317" duration="1601000" />
+      <workItem from="1710391908317" duration="4578000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="origin/main" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>
