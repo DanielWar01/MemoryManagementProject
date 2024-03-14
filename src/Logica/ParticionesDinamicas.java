@@ -111,7 +111,7 @@ public class ParticionesDinamicas {
 					contadorPID++;
 					memTotalLibre = memTotalLibre - proceso.getTamano();
 					arrayListToArray();
-					
+
 					procesoAgregado = true;
 				}else {
 					procesoAgregado = false;
@@ -130,6 +130,7 @@ public class ParticionesDinamicas {
 						
 					}
 				}
+				
 				if(posicion != 0) {
 					//Si el tama�o de la particion es igual al tama�o proceso se hace la asignacion directa
 					if(particiones[posicion].getTamano() == proceso.getTamano()) {
