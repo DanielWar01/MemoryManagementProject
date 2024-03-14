@@ -10,8 +10,6 @@ public class ParticionesEstFijas {
 		dividirMemoria();
 	}
 	
-	private IntAHex conversorHex = new IntAHex();
-	
 	//Contador que permite asignar PID a cada proceso
 	int contadorPID = 1; 
 	//Metodo de asignacion

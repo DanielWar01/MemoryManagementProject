@@ -138,7 +138,7 @@ public class JFramePrincipal extends JFrame implements ActionListener{
 		
 		//Panel Modelos de Memoria
 		panelModMemoria = new JPanel();
-		panelModMemoria.setBorder(new TitledBorder(null, "Modelo de Memoria", TitledBorder.LEADING, TitledBorder.TOP, null, null));
+		panelModMemoria.setBorder(new TitledBorder(null, "Tipo de Memoria", TitledBorder.LEADING, TitledBorder.TOP, null, null));
 		panelModMemoria.setBounds(10, 370, 180, 183);
 		panelPrincipal.add(panelModMemoria);
 		panelModMemoria.setLayout(null);
@@ -257,13 +257,13 @@ public class JFramePrincipal extends JFrame implements ActionListener{
 		lblKB1.setBounds(135, 105, 65, 13);
 		panelMemoria.add(lblKB1);
 
-		fragmentation = new JLabel("Fragmentación Generada");
-		fragmentation.setBounds(135, 125, 115, 13);
+		fragmentation = new JLabel("<Html>Fragmentación<br>Generada</Html>");
+		fragmentation.setBounds(135, 125, 115, 30);
 		fragmentation.setVisible(true);
 		panelMemoria.add(fragmentation);
 
 		fragmentationKB = new JLabel("KB");
-		fragmentationKB.setBounds(135, 145,115,13);
+		fragmentationKB.setBounds(135, 165,115,13);
 		panelMemoria.add(fragmentationKB);
 
 		dibujoMemoria = dibujoProcesos.getDibujoMemLibre();

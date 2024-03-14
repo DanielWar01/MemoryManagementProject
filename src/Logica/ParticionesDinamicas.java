@@ -14,8 +14,6 @@ public class ParticionesDinamicas {
 		dividirMemoria();
 	}
 	
-	private IntAHex conversorHex = new IntAHex();
-	
 	//Contador que permite asignar PID a cada proceso 
 	// En este modelo contadorPID+1 servira para identificar la particion
 	int contadorPID = 1;
